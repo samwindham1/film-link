@@ -1,8 +1,14 @@
+@import 'variables/Colors';
+@import 'variables/Fonts';
+
+body {
+  margin: 0;
+}
+
 #app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: #2c3e50;
+  color: $font-color;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  margin-top: 60px;
   text-align: center;
 }

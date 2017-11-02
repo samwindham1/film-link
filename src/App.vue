@@ -1,21 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Header/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
 export default {
   name: "app",
   components: {
-    HelloWorld
+    Header
   }
 };
 </script>
 
 <style lang="scss">
-@import "scss/App";
+@import './styles/app';
 </style>
