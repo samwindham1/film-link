@@ -1,7 +1,7 @@
 {
   "name": "film-link",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Recommend a movie!",
   "author": "samwindham1 <sam.windham95@gmail.com>",
   "private": true,
   "scripts": {
