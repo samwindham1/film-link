@@ -25,7 +25,7 @@ module.exports = {
       '@': resolve('src'),
       'styles': resolve('src/styles'),
       'var': resolve('src/styles/variables'),
-      'foundation': 'foundation-sites/scss/foundation.scss'
+      'base': 'getbase/scss/'
     }
   },
   module: {

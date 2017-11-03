@@ -6,7 +6,6 @@
 
 <script>
 import header from './components/header';
-import foundation from 'foundation-sites';
 
 export default {
   name: 'app',

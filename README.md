@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+Using [Base CSS](http://getbase.org/docs/)
+
 ## Current
 
 - Fill out rest of this To-Do
