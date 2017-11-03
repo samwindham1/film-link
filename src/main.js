@@ -1,10 +1,12 @@
 import Vue from 'vue';
-import App from './App';
+import app from './app';
 
 Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
-  template: '<App/>',
-  components: { App }
+  template: '<app/>',
+  components: {
+    app
+  }
 });

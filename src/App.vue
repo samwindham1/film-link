@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <Header/>
+    <v-header></v-header>
   </div>
 </template>
 
 <script>
+import header from './components/header';
+import foundation from 'foundation-sites';
+
 export default {
-  name: "app",
+  name: 'app',
   components: {
-    Header
+    'v-header': header
   }
 };
 </script>
 
 <style lang="scss">
-@import './styles/app';
+
 </style>

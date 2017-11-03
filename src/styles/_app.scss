@@ -1,5 +1,8 @@
-@import 'variables/Colors';
-@import 'variables/Fonts';
+@import '~var/foundation-settings';
+
+@import '~var/colors';
+@import '~var/fonts';
+
 
 body {
   margin: 0;
@@ -8,7 +11,7 @@ body {
 #app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
   color: $font-color;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
 }

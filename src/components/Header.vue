@@ -1,20 +1,21 @@
 <template>
-  <div class="header">
+  <header id="header">
+    <div id="float-left"></div>
     <h1>{{ message }}</h1>
-  </div>
+  </header>
 </template>
 
 <script>
 export default {
   name: 'header',
-  data () {
+  data() {
     return {
-      message: 'Hello World!'
-    }
+      message: 'Film Link'
+    };
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/components/Header';
+  @import "~styles/components/header";
 </style>

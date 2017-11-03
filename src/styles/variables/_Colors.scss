@@ -1,10 +1,16 @@
+// Color Scheme
+$primary: #2e3835;
+$secondary: #32021f;
+
+$white: #f9f9f9;
+$light: #b3b6b5;
+$dark: #090b0a; // #0b0f0e
 // Fonts
-$font-color: #000;
+$font-color: $dark;
+$font-white: $white;
 
 
 // Backgrounds
-$bg-dark: rgb(100, 121, 116);
+$bg-dark: $dark;
 
 // Borders
-
-

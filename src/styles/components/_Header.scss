@@ -1,11 +1,9 @@
 h1,
 h2 {
-  font-weight: normal;
-  margin: 0;
+  color: $font-white; // font-weight: normal; // margin: 0;
 }
 
-.header {
+#header {
   background-color: $bg-dark;
-  height: 100px;
-  margin: 0;
+  height: 100px; // margin: 0;
 }
