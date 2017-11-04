@@ -1,12 +1,36 @@
-h1,
-h2 {
-  color: $font-white;
-  font-weight: normal;
+#header {
+  // background-color: $bg-dark;
+  border-bottom: 1px solid $dark;
+  border-top: 2px solid $secondary;
+  color: $dark;
+  cursor: default;
+  user-select: none;
+  height: 73px;
   margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-#header {
-  background-color: $bg-dark;
-  height: 72px;
-  margin: 0;
+#logo {
+  padding: 16px;
+
+  a {
+    color: $dark;
+    display: inline-block;
+    font-size: 3.2rem;
+    font-weight: normal;
+    height: 4rem;
+    line-height: 4rem;
+    margin: 0;
+
+    i.fa {
+      display: inline-block;
+      line-height: 100%;
+    }
+  }
+}
+
+#menu {
+  padding: 16px;
 }

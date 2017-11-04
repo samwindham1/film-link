@@ -1,6 +1,5 @@
-@import '~var/colors';
+@import '~base/styles';
 @import '~var/fonts';
-
 
 body {
   margin: 0;
@@ -11,7 +10,44 @@ body {
   -webkit-font-smoothing: antialiased;
 
   color: $font-color;
-  text-align: center;
 }
 
-@import '~base/styles';
+div {
+  &.container,
+  &.row,
+  &[class^='col-'] {
+    height: 100%;
+  }
+
+  &[class^='col-'] {
+    border-left: 1px solid $dark;
+    border-right: 1px solid $dark;
+  }
+}
+
+.btn {
+  border: 1px solid $dark;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin-right: .5rem;
+  padding: .9rem;
+
+  &:link {
+    color: $dark;
+  }
+
+  &:visited {
+    color: $dark;
+  }
+
+  &:hover {
+    color: $dark;
+  }
+
+  &:active {
+    color: $dark;
+  }
+}
