@@ -49,7 +49,7 @@ exports.cssLoaders = function(options) {
     includePaths: [
       './src/styles'
     ],
-    data: "@import '~styles/app';"
+    data: "@import '~var/colors';"
   };
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html

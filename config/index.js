@@ -1,4 +1,3 @@
-
 'use strict'
 // Template version: 1.1.3
 // see http://vuejs-templates.github.io/webpack for documentation.
@@ -17,7 +16,7 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    productionGzip: true,
     productionGzipExtensions: ['js', 'css'],
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
