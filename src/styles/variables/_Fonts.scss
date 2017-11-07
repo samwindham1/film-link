@@ -1,9 +1,5 @@
 html {
-  background-color: $white;
-  font-family: 'Avenir',
-  Helvetica,
-  Arial,
-  sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-size: 62.5%;
 }
@@ -52,5 +48,12 @@ h4 {
 }
 
 a {
+  color: $font-color;
   text-decoration: none;
+
+  transition: color .1s ease, border-color .1s ease, background-color .25s ease;
+
+  &:hover {
+    color: $link-hover;
+  }
 }

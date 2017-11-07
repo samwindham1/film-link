@@ -1,6 +1,11 @@
 <template>
   <main id="recommend">
-    <h2>{{ temp }}</h2>
+    <div class="container">
+      <div id="search">
+        <input type="text" name="search" id="search-box" autocomplete="off" placeholder="Search a movie...">
+      </div>
+
+    </div>
   </main>
 </template>
 

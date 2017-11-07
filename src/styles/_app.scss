@@ -1,7 +1,13 @@
 @import '~base/styles';
 @import '~var/fonts';
 
+html {
+  background-color: $primary;
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
 }
 
@@ -9,7 +15,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
+  background-color: $primary;
   color: $font-color;
+  height: 100%;
 }
 
 div {
@@ -20,13 +28,14 @@ div {
   }
 
   &[class^='col-'] {
-    border-left: 1px solid $dark;
-    border-right: 1px solid $dark;
+    // border-left: 1px solid $dark;
+    // border-right: 1px solid $dark;
   }
 }
 
 .btn {
-  border: 1px solid $dark;
+  background-color: $light;
+  border: 1px solid $light;
   border-radius: 2px;
   cursor: pointer;
   display: inline-block;
@@ -36,18 +45,18 @@ div {
   padding: .9rem;
 
   &:link {
-    color: $dark;
+    color: $primary;
   }
 
   &:visited {
-    color: $dark;
+    color: $primary;
   }
 
   &:hover {
-    color: $dark;
+    color: $primary;
   }
 
   &:active {
-    color: $dark;
+    color: $primary;
   }
 }

@@ -1,22 +1,22 @@
 #header {
-  // background-color: $bg-dark;
-  border-bottom: 1px solid $dark;
-  border-top: 2px solid $secondary;
-  color: $dark;
+  background-color: $dim-bg;
+  border-top: 2px solid $accent;
   cursor: default;
-  user-select: none;
-  height: 73px;
+  height: 106px;
   margin: 0;
+  padding-top: 32px;
   position: fixed;
   top: 0;
+  user-select: none;
   width: 100%;
 }
 
 #logo {
-  padding: 16px;
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding-bottom: 32px;
 
   a {
-    color: $dark;
     display: inline-block;
     font-size: 3.2rem;
     font-weight: normal;
@@ -28,9 +28,35 @@
       display: inline-block;
       line-height: 100%;
     }
+    span {
+      line-height: 4rem;
+    }
   }
 }
 
 #menu {
-  padding: 16px;
+  line-height: 2.4rem;
+  padding-bottom: 32px;
+
+  a {
+    display: inline-block;
+    font-size: 1.4rem;
+    height: 100%;
+    line-height: 2.2rem;
+    margin-right: 4px;
+    padding: 9px;
+  }
+
+  .sign-in {
+    border: 1px solid $font-color;
+    border-radius: 2.4rem;
+    margin-left: 10px;
+    padding: 8px 12px;
+
+    &:hover {
+      background-color: $font-color;
+      border-color: $font-color;
+      color: $primary;
+    }
+  }
 }

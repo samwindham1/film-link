@@ -2,16 +2,16 @@
   <header id="header">
     <div class="container">
       <div class="row clear">
-        <div class="col-4" id="logo">
+        <div class="col-6 col-4-m" id="logo">
           <a href="#">
             <i class="fa fa-link" />
             <span>{{ title }}</span>
           </a>
         </div>
-        <div class="col-6 push-2" id="menu">
-          <a href="#" class="btn">Sign-in</a>
-          <a href="#" class="btn">About</a>
-          <a href="#" class="btn">Support</a>
+        <div class="col-6 right" id="menu">
+          <a href="#">ABOUT</a>
+          <a href="#">SUPPORT</a>
+          <a href="#" class="sign-in">LOGIN</a>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ export default {
   name: 'header',
   data() {
     return {
-      title: 'Film Link'
+      title: 'FILMLINK'
     };
   }
 };

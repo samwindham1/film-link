@@ -1,7 +1,28 @@
 #footer {
-  height: 72px;
-  border-bottom: 1px solid $dark;
-  position: absolute;
+  border-bottom: 2px solid $dark;
   bottom: 0;
+  color: $light;
+  height: 84px;
+  position: absolute;
+  text-align: left;
   width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+
+  li {
+    // display: inline-block;
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: $light;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: lighten($light, 25%);
+    }
+  }
 }
