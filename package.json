@@ -11,6 +11,7 @@
     "server": "node api/server.js"
   },
   "dependencies": {
+    "axios": "^0.17.0",
     "getbase": "^3.5.1",
     "jquery": "^3.2.1",
     "vue": "^2.5.2"

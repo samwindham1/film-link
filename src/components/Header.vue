@@ -10,7 +10,7 @@
         </div>
         <div class="col-6 right" id="menu">
           <a href="#">ABOUT</a>
-          <a href="#">SUPPORT</a>
+          <a href="#">TRAIN</a>
           <a href="#" class="sign-in">LOGIN</a>
         </div>
       </div>

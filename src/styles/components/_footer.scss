@@ -25,4 +25,24 @@ ul {
       color: lighten($light, 25%);
     }
   }
+
+  .tmdb {
+    padding-top: 1em;
+    line-height: 1em;
+    font-size: 1rem;
+
+    div {
+      padding: 0 0 0 1em;
+    }
+
+    #tmdb-logo {
+      fill: #081c24;
+      width: 2.8rem;
+      margin-top: 4px;
+
+      &:hover {
+        fill: $white;
+      }
+    }
+  }
 }
