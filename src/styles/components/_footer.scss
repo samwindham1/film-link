@@ -1,7 +1,6 @@
 #footer {
-  border-bottom: 2px solid $dark;
   bottom: 0;
-  color: $light;
+  color: rgba($primary, .5);
   height: 84px;
   position: absolute;
   text-align: left;
@@ -18,11 +17,11 @@ ul {
   }
 
   a {
-    color: $light;
+    color: rgba($primary, .5);
     font-size: 1.2rem;
 
     &:hover {
-      color: lighten($light, 25%);
+      color: $primary;
     }
   }
 
@@ -36,12 +35,12 @@ ul {
     }
 
     #tmdb-logo {
-      fill: #081c24;
+      fill: #01d277;
       width: 2.8rem;
       margin-top: 4px;
 
       &:hover {
-        fill: $white;
+        fill: #081c24;
       }
     }
   }

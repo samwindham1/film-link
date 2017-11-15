@@ -1,14 +1,14 @@
 // Color Scheme
-$primary: #28454d;
-$secondary: #183a43;
-$accent: #ce594c;
+$primary: #487FFF;
+$secondary: #6E9AFF;
+$accent: #FFBB33;
 
 $white: #fff;
-$light: #5a7881;
-$dark: #0a2730;
+$light: desaturate(rgba($primary, .05), 50%);
+$dark: #0D2B37;
 
 $dim-bg: rgba($white, .04);
 
 // Fonts
-$font-color: rgba($white, .95);
-$link-hover: rgba($font-color, .6);
+$font-color: $primary;
+$link-hover: $accent;

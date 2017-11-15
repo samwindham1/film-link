@@ -2,7 +2,7 @@
 @import '~var/fonts';
 
 html {
-  background-color: $primary;
+  background-color: $light;
   height: 100%;
 }
 
@@ -14,7 +14,7 @@ body {
 #app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: $primary;
+  background-color: $white;
   color: $font-color;
   height: 100%;
 }
@@ -29,33 +29,5 @@ div {
   &[class^='col-'] {
     // border-left: 1px solid $dark;
     // border-right: 1px solid $dark;
-  }
-}
-
-.btn {
-  background-color: $light;
-  border: 1px solid $light;
-  border-radius: 2px;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  margin-right: .5rem;
-  padding: .9rem;
-
-  &:link {
-    color: $primary;
-  }
-
-  &:visited {
-    color: $primary;
-  }
-
-  &:hover {
-    color: $primary;
-  }
-
-  &:active {
-    color: $primary;
   }
 }
