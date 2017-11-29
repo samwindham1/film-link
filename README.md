@@ -7,21 +7,10 @@ Using [Base CSS](http://getbase.org/docs/)
 ## Current
 
 ### Front-end:
-- Stem out broad sections
-- Header
-  - Title / Logo
-  - Right menu
-    - Sign-in
-    - About
-    - Support
 - Body
   - Input Box
   - Recommended films
     - Film Card with poster
-- Footer
-  - About developer
-  - Link to github
-  - Link to support site
 
 ## Next
 
