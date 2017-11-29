@@ -15,6 +15,8 @@ export const TMDB = {
     params: {
       query: query,
       page: 1,
+      include_adult: false,
+      language: 'en-US',
     },
   }),
   config: () => HTTP.get('/configuration'),
