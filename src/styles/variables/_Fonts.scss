@@ -54,6 +54,6 @@ a {
   transition: color .1s ease, border-color .1s ease, background-color .25s ease;
 
   &:hover {
-    color: $link-hover;
+    color: $primary;
   }
 }

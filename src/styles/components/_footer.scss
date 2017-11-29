@@ -1,47 +1,73 @@
 #footer {
   bottom: 0;
-  color: rgba($primary, .5);
-  height: 84px;
+  color: $primary;
+  font-size: 1.2rem;
+  height: 60px;
   position: absolute;
   text-align: left;
   width: 100%;
+
+  .info {
+    height: 100%;
+    width: 49%;
+
+    @media (max-width: 600px), screen and (orientation: portrait) {
+      & {
+        font-size: 1rem;
+        height: auto;
+        line-height: 1rem;
+        width: 100%;
+
+        a {
+          font-size: 1rem;
+        }
+      }
+
+      &.github {
+        padding-left: 58px;
+      }
+    }
+  }
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
+a {
+  color: $primary;
+  font-size: 1.2rem;
 
-  li {
-    // display: inline-block;
-    font-size: 1.2rem;
+  &:hover {
+    color: $dark;
+  }
+}
+
+.github {
+  float: left;
+}
+
+.tmdb {
+  float: right;
+
+  div {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    &.tmdb-left {
+      width: 2.8rem;
+    }
+
+    &.tmdb-right {
+      width: calc(100% - 6.8rem);
+    }
   }
 
-  a {
-    color: rgba($primary, .5);
-    font-size: 1.2rem;
+  #tmdb-logo {
+    fill: #01d277;
+    height: 2.8rem;
+    margin-top: 4px;
+    transition: fill ease .25s;
 
     &:hover {
-      color: $primary;
-    }
-  }
-
-  .tmdb {
-    padding-top: 1em;
-    line-height: 1em;
-    font-size: 1rem;
-
-    div {
-      padding: 0 0 0 1em;
-    }
-
-    #tmdb-logo {
-      fill: #01d277;
-      width: 2.8rem;
-      margin-top: 4px;
-
-      &:hover {
-        fill: #081c24;
-      }
+      fill: #081c24;
     }
   }
 }

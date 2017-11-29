@@ -1,15 +1,23 @@
 <template>
   <main id="link">
-    <div class="container">
-      <div id="search">
+
+    <div id="search">
+      <div class="container">
         <!-- Search Box -->
-        <multiselect v-model="selected_movie" id="search-box" placeholder="Search a movie" open-direction="down" label="title" :options="results" :multiple="false" :loading="isLoading" :internal-search="false" :options-limit="50" :max-height="300" @search-change="search" @close="clearResults"></multiselect>
-        <!-- Selected -->
-        <div class="selected" v-if="selected_movie">
-          {{selected_movie.title}}
-        </div>
+        <multiselect v-model="selected_movie" id="search-box" placeholder="Search a movie" open-direction="down" label="title" :options="results" :multiple="false" :loading="isLoading" :internal-search="false" :options-limit="50" :max-height="150" @search-change="search" @close="clearResults"></multiselect>
       </div>
     </div>
+
+    <!-- Selected -->
+    <div class="selected" v-if="selected_movie">
+      <div class="container">
+        <h3>{{selected_movie.title}}</h3>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="neural-animation"></div>
   </main>
 </template>
 

@@ -2,7 +2,7 @@
 @import '~var/fonts';
 
 html {
-  background-color: $light;
+  background-color: $white;
   height: 100%;
 }
 
@@ -14,7 +14,7 @@ body {
 #app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: $white;
+  background-color: $light;
   color: $font-color;
   height: 100%;
 }

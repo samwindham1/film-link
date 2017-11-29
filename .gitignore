@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .sass-lint.yml
+static/
 
 # Editor directories and files
 .idea
