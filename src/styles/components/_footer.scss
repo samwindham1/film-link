@@ -7,44 +7,26 @@
   text-align: left;
   width: 100%;
 
+  .container {
+    padding: 0 10px;
+  }
+
   .info {
-    height: 100%;
     width: 49%;
+  }
 
-    @media (max-width: 600px), screen and (orientation: portrait) {
-      & {
-        font-size: 1rem;
-        height: auto;
-        line-height: 1rem;
-        width: 100%;
+  a {
+    color: $primary;
+    font-size: 1.2rem;
 
-        a {
-          font-size: 1rem;
-        }
-      }
-
-      &.github {
-        padding-left: 58px;
-      }
+    &:hover {
+      color: $dark;
     }
   }
 }
 
-a {
-  color: $primary;
-  font-size: 1.2rem;
-
-  &:hover {
-    color: $dark;
-  }
-}
-
-.github {
-  float: left;
-}
-
 .tmdb {
-  float: right;
+  float: left;
 
   div {
     display: inline-block;
@@ -68,6 +50,34 @@ a {
 
     &:hover {
       fill: #081c24;
+    }
+  }
+}
+
+.github {
+  float: right;
+  text-align: right;
+}
+
+@media (max-width: 600px),
+screen and (orientation: portrait) {
+  #footer {
+    padding-top: 14px;
+
+    .info {
+      font-size: 1rem;
+      height: auto;
+      line-height: 1rem;
+      width: 100%;
+
+      a {
+        font-size: 1rem;
+      }
+
+      &.github {
+        height: 0;
+        visibility: hidden;
+      }
     }
   }
 }

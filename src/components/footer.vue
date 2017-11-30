@@ -1,11 +1,6 @@
 <template>
   <footer id="footer">
     <div class="container">
-      <div class="info github">
-        Developed by
-        <a href="https://github.com/samwindham1">Sam Windham</a>
-        &copy 2017
-      </div>
       <div class="info tmdb">
         <div class="tmdb-left">
           <a href="https://www.themoviedb.org/">
@@ -25,6 +20,11 @@
           but is not endorsed or certified by
           <a href="https://www.themoviedb.org/">TMDb</a>.
         </div>
+      </div>
+      <div class="info github">
+        Developed by
+        <a href="https://github.com/samwindham1">Sam Windham</a>
+        &copy 2017
       </div>
     </div>
   </footer>
