@@ -4,10 +4,11 @@
       <div class="container">
         <!-- Search Box -->
         <input id="search-box" type="text" v-model="query" placeholder="Search a movie">
+        <!-- Search Results -->
         <transition name="open-results">
-          <div id="results" v-if="results.length > 0">
-            <ul id="scroll" ref="scroll" v-on:scroll="scroll">
-              <li class="result" v-for="movie in results" :key="movie.id">
+          <div id="results" v-show="results.length > 0">
+            <ul id="scroll" ref="scroll" @scroll="scroll">
+              <li class="result" v-for="(movie, index) in results" :key="index" @click="select(movie)">
                 <!-- Poster -->
                 <img class="poster" :src="getPoster(movie.poster_path)">
                 <!-- Details -->
@@ -25,25 +26,12 @@
               </li>
             </ul>
             <!-- Scroll icons -->
-            <i v-if="scrollLeft" id="scroll-left" class="scroll-indicator fa fa-angle-left"></i>
-            <i v-if="scrollRight" id="scroll-right" class="scroll-indicator fa fa-angle-right"></i>
+            <i v-show="scrollLeft" id="scroll-left" class="scroll-indicator fa fa-angle-left"></i>
+            <i v-show="scrollRight" id="scroll-right" class="scroll-indicator fa fa-angle-right"></i>
           </div>
         </transition>
       </div>
     </div>
-
-    <!-- Selected -->
-    <!-- <div class="selected" v-if="selected && selected.length > 0">
-        <div class="container">
-          <ul>
-            <li class="selected-movie" v-for="movie in selected" :key="movie.id" :title="movie.title">
-              <img class="poster" :src="getPoster(movie.poster_path)">
-              <div class="dim-overlay"></div>
-              <i class="fa fa-times-thin close-icon" aria-hidden="true"></i>
-            </li>
-          </ul>
-        </div>
-      </div> -->
   </div>
 </template>
 
@@ -56,9 +44,7 @@ export default {
   name: 'search',
   data() {
     return {
-      // multi-select
-      selected: null,
-      isLoading: false,
+      // search
       query: '',
 
       // scroll
@@ -95,7 +81,14 @@ export default {
         .then(res => {
           this.results = res.data.results;
           this.isLoading = false;
-          // console.log(this.results.map(movie => movie.title));
+          
+          if(this.results.length > 10) {
+            this.scrollLeft = false;
+            this.scrollRight = true;
+          }
+          else {
+            this.scroll();
+          }
         })
         .catch(e => {
           this.errors.push(e);
@@ -112,7 +105,6 @@ export default {
     },
 
     clearResults: function () {
-      // console.log("Results Cleared.");
       this.results = [];
     },
 
@@ -135,6 +127,12 @@ export default {
         this.scrollLeft = false;
       }
     }, 15),
+
+    select: function (movie) {
+      this.clearResults();
+      this.query = '';
+      this.$emit('selectMovie', movie);
+    },
   },
   watch: {
     query: function () {
@@ -146,8 +144,6 @@ export default {
   },
 }
 </script>
-
-<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style lang="scss">
   @import "~styles/components/search";
