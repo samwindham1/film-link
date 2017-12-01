@@ -37,7 +37,6 @@
 
 <script>
 import { TMDB } from '@/router/http';
-import path from 'path';
 import _, { debounce } from 'lodash';
 
 export default {
@@ -53,26 +52,15 @@ export default {
 
       // api results
       results: [],
-      config: [],
       errors: []
     };
   },
-  created() {
-    TMDB.config()
-      .then(res => {
-        this.config = res.data;
-      })
-      .catch(e => {
-        this.errors.push(e);
-        console.log(e);
-      });
-  },
+  props: [
+    'getPoster',
+    'parseDate',
+  ],
 
   methods: {
-    parseDate: function (dateString) {
-      return new Date(Date.parse(dateString)).getFullYear();
-    },
-
     search: debounce(function () {
       if (!this.query) return;
 
@@ -81,8 +69,8 @@ export default {
         .then(res => {
           this.results = res.data.results;
           this.isLoading = false;
-          
-          if(this.results.length > 10) {
+
+          if (this.results.length > 10) {
             this.scrollLeft = false;
             this.scrollRight = true;
           }
@@ -96,13 +84,6 @@ export default {
           this.isLoading = false;
         });
     }, 300),
-
-    getPoster: function (imgPath) {
-      if (imgPath) {
-        return path.join(this.config.images.secure_base_url, this.config.images.poster_sizes[3], imgPath);
-      }
-      return '';
-    },
 
     clearResults: function () {
       this.results = [];
