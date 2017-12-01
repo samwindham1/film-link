@@ -8,99 +8,169 @@
   background-color: $white;
 
   #search-box {
+    background-color: $white;
+    border: 0;
     font-size: 1.6rem;
     height: 100%;
     line-height: 1.8rem;
-  }
-
-  .multiselect {
-    $primary-color: $primary;
     margin: 0 auto;
     width: 100%;
+    color: $dark;
 
-    .multiselect__tags {
-      border: 0;
-      border-radius: 0;
-    }
-
-    .multiselect__content-wrapper {
-      border: 0;
-      border-radius: 0;
-    }
-
-    .multiselect__option--highlight {
-      background: $primary;
-
-      &::after {
-        background: $primary;
-      }
+    &::placeholder {
+      color: $grey;
     }
   }
 }
 
-.selected {
+.open-results-enter-active,
+.open-results-leave-active {
+  transition: opacity .1s;
+}
+
+.open-results-enter,
+.open-results-leave-to {
+  opacity: 0;
+}
+
+#results {
   background-color: $white;
-  height: 150px;
-  text-align: left;
+  position: relative;
 
-  ul {
+
+  #scroll {
+    height: 200px;
+    padding: 6px 10px;
     margin: 0;
-    padding: 0;
-  }
-
-  .selected-movie {
-    display: inline-block;
-    height: 140px;
     list-style: none;
-    margin: 0 8px;
     position: relative;
 
-    .poster {
-      border-radius: 6px;
-      cursor: pointer;
-      height: 100%;
-      width: 93px;
-    }
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 
-    .dim-overlay {
-      background-color: black;
-      border-radius: 6px;
-      height: 100%;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      transition: opacity .1s ease;
-      width: 100%;
+    &::-webkit-scrollbar {
+      display: none;
     }
+  }
 
-    .close-icon {
-      visibility: hidden;
-      opacity: 0;
-      color: $white;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      transition: visibility 0s, opacity .1s ease;
-      font-size: 48px;
-
-      &.fa-times-thin:before {
-        content: '\00d7';
-      }
-    }
+  .result {
+    white-space: normal;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    vertical-align: top;
+    margin: 0 5px;
+    position: relative;
 
     &:hover {
-      cursor: pointer;
-
-      .dim-overlay {
-        opacity: .5;
+      .poster {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        filter: brightness(20%);
       }
 
-      .close-icon {
-        opacity: 1;
+      .details {
         visibility: visible;
+        opacity: 1;
       }
+    }
+
+    .poster {
+      height: 180px;
+      margin: auto;
+      transition: transform .1s ease, filter .25s ease;
+    }
+
+
+    .details {
+      color: $white;
+      visibility: hidden;
+      opacity: 0;
+      width: calc(100% - 8px);
+      position: absolute;
+      text-align: left;
+      top: 6px;
+      left: 6px;
+      transition: opacity .25s ease;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      line-height: 1.8rem;
+    }
+
+    .date {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+
+    .add-icon {
+      font-size: 4rem;
+      line-height: 4rem;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+
+      text-align: center;
+    }
+  }
+
+  .scroll-indicator {
+    font-size: 64px;
+    line-height: 64px;
+    position: absolute;
+    top: 58px;
+    color: rgba($white, .8);
+    filter: drop-shadow(0 0 2px rgba($dark, .5));
+
+    &#scroll-left {
+      left: 12px;
+    }
+
+    &#scroll-right {
+      right: 12px;
     }
   }
 }
+
+
+// .selected {
+//   background-color: $white;
+//   height: 150px;
+//   text-align: left;
+//   ul {
+//     margin: 0;
+//     padding: 0;
+//   }
+//   .selected-movie {
+//     display: inline-block;
+//     height: 140px;
+//     list-style: none;
+//     margin: 0 8px;
+//     position: relative;
+//     .close-icon {
+//       visibility: hidden;
+//       opacity: 0;
+//       color: $white;
+//       position: absolute;
+//       left: 50%;
+//       top: 50%;
+//       transform: translate(-50%, -50%);
+//       transition: visibility 0s, opacity .1s ease;
+//       font-size: 48px;
+//       &.fa-times-thin:before {
+//         content: '\00d7';
+//       }
+//     }
+//     &:hover {
+//       cursor: pointer;
+//       .close-icon {
+//         opacity: 1;
+//         visibility: visible;
+//       }
+//     }
+//   }
+// }
