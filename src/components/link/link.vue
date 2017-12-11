@@ -1,12 +1,21 @@
 <template>
   <main id="link">
     <!-- Search Component -->
-    <search @selectMovie="addToSelected($event)" :get-poster="getPoster" :parse-date="parseDate"></search>
+    <search @selectMovie="addToSelected($event)" :get-poster="getPoster"></search>
 
     <div class="divider"></div>
 
     <!-- Display Selected Movies -->
-    <selected @removeMovie="removeFromSelected($event)" :selected-movies="selectedMovies" :get-poster="getPoster" :parse-date="parseDate"></selected>
+    <selected @removeMovie="removeFromSelected($event)" :selected-movies="selectedMovies" :get-poster="getPoster"></selected>
+
+    <div id="hero">
+      <div class="container">
+        <h2 class="description">Film suggestions powered by Machine Learning</h2>
+        <p class="more-info">Discover the missing link to your next film.
+          <a href="#" class="about-link">Find out more...</a>
+        </p>
+      </div>
+    </div>
 
     <!-- Home Page Animation -->
     <div id="neural-animation"></div>
@@ -51,9 +60,6 @@ export default {
     },
     removeFromSelected: function (index) {
       this.selectedMovies.splice(index, 1);
-    },
-    parseDate: function (dateString) {
-      return new Date(Date.parse(dateString)).getFullYear();
     },
     getPoster: function (imgPath) {
       if (imgPath) {

@@ -1,6 +1,5 @@
 .selected {
-  background-color: $white;
-  height: 150px;
+  // height: 150px;
   list-style: none;
   text-align: left;
 
@@ -11,45 +10,8 @@
 
   .selected-movie {
     display: inline-block;
-    height: 140px;
-    margin: 0 8px;
+    margin: 0 5px;
     position: relative;
-    cursor: pointer;
-
-    .poster {
-      height: 180px;
-      margin: auto;
-      transition: transform .1s ease, filter .25s ease;
-    }
-
-    .close-icon {
-      visibility: hidden;
-      opacity: 0;
-      color: $white;
-      font-size: 4rem;
-      line-height: 4rem;
-      width: 100%;
-      position: absolute;
-      top: 70px;
-      text-align: center;
-      transition: opacity .25s ease;
-
-      &.fa-times-thin:before {
-        content: '\00d7';
-      }
-    }
-
-    &:hover {
-      .poster {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        filter: brightness(20%);
-        transform: scale(1.05);
-      }
-
-      .close-icon {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
+    vertical-align: top;
   }
 }

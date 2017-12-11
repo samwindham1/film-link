@@ -1,34 +1,39 @@
 <template>
-  <div class="selected container">
-    <ul>
-      <li class="selected-movie" v-for="(movie, index) in selectedMovies" :key="index" @mouseup="removeFromSelected(index)">
-        <img class="poster" :src="getPoster(movie.poster_path)">
-        <i class="fa fa-times-thin close-icon" aria-hidden="true"></i>
-        <div class="details">
-          <div class="title">
-            {{movie.title}}
-          </div>
-          <div class="date" v-if="parseDate(movie.release_date)">
-            ({{parseDate(movie.release_date)}})
-          </div>
-        </div>
-      </li>
-    </ul>
+  <div class="selected">
+    <div class="container">
+      <ul>
+        <li class="selected-movie" v-for="(movie, index) in selectedMovies" :key="index" @mouseup="displayInfo(index)">
+          <movie :details="movie" :poster="getPoster(movie.poster_path)" :display-info="(index == displayedIndex)"></movie>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+import movie from './movie';
+
 export default {
   name: 'selected',
+  data() {
+    return {
+      displayedIndex: -1,
+    };
+  },
+  components: {
+    movie,
+  },
   props: [
     'selectedMovies',
     'getPoster',
-    'parseDate',
   ],
   methods: {
     removeFromSelected: function (index) {
       this.$emit('removeMovie', index);
     },
+    displayInfo: function (index) {
+      this.displayedIndex = index;
+    }
   },
 }
 </script>

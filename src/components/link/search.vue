@@ -1,36 +1,21 @@
 <template>
-  <div class="">
-    <div id="search">
-      <div class="container">
-        <!-- Search Box -->
-        <input id="search-box" type="text" v-model="query" placeholder="Search a movie">
-        <!-- Search Results -->
-        <transition name="open-results">
-          <div id="results" v-show="results.length > 0">
-            <ul id="scroll" ref="scroll" @scroll="scroll">
-              <li class="result" v-for="(movie, index) in results" :key="index" @click="select(movie)">
-                <!-- Poster -->
-                <img class="poster" :src="getPoster(movie.poster_path)">
-                <!-- Details -->
-                <div class="details">
-                  <div class="title">
-                    {{movie.title}}
-                  </div>
-                  <div class="date" v-if="parseDate(movie.release_date)">
-                    ({{parseDate(movie.release_date)}})
-                  </div>
-                  <div class="add-icon">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <!-- Scroll icons -->
-            <i v-show="scrollLeft" id="scroll-left" class="scroll-indicator fa fa-angle-left"></i>
-            <i v-show="scrollRight" id="scroll-right" class="scroll-indicator fa fa-angle-right"></i>
-          </div>
-        </transition>
-      </div>
+  <div id="search">
+    <div class="container">
+      <!-- Search Box -->
+      <input id="search-box" type="text" v-model="query" placeholder="Search a movie">
+      <!-- Search Results -->
+      <transition name="open-results">
+        <div id="results" v-show="results.length > 0">
+          <ul id="scroll" ref="scroll" @scroll="scroll">
+            <li class="result" v-for="(movie, index) in results" :key="index" @click="select(movie)">
+              <movie :details="movie" :poster="getPoster(movie.poster_path)" :search="true"></movie>
+            </li>
+          </ul>
+          <!-- Scroll icons -->
+          <i v-show="scrollLeft" id="scroll-left" class="scroll-indicator fa fa-angle-left"></i>
+          <i v-show="scrollRight" id="scroll-right" class="scroll-indicator fa fa-angle-right"></i>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -38,9 +23,13 @@
 <script>
 import { TMDB } from '@/router/http';
 import _, { debounce } from 'lodash';
+import movie from './movie';
 
 export default {
   name: 'search',
+  components: {
+    movie
+  },
   data() {
     return {
       // search
@@ -57,18 +46,18 @@ export default {
   },
   props: [
     'getPoster',
-    'parseDate',
   ],
 
   methods: {
     search: debounce(function () {
       if (!this.query) return;
 
-      this.isLoading = true;
       TMDB.search(this.query)
         .then(res => {
-          this.results = res.data.results;
-          this.isLoading = false;
+          this.results = res.data.results.map((movie) => {
+            movie.date = this.parseDate(movie.release_date);
+            return movie;
+          });
 
           if (this.results.length > 10) {
             this.scrollLeft = false;
@@ -81,9 +70,12 @@ export default {
         .catch(e => {
           this.errors.push(e);
           console.log(e);
-          this.isLoading = false;
         });
     }, 300),
+
+    parseDate: function (dateString) {
+      return new Date(Date.parse(dateString)).getFullYear();
+    },
 
     clearResults: function () {
       this.results = [];
