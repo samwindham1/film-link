@@ -14,3 +14,8 @@ static/
 *.ntvs*
 *.njsproj
 *.sln
+
+node.cmd
+npm.cmd
+
+/public
