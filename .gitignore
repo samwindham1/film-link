@@ -19,3 +19,5 @@ node.cmd
 npm.cmd
 
 /public
+
+.env
