@@ -11,7 +11,9 @@
         "allowSyntheticDefaultImports": true,
         "paths": {
             "@api": ["api"],
-            "@api/*": ["api/*"]
+            "@api/*": ["api/*"],
+            "@components": ["app/components"],
+            "@routes/*": ["app/routes/*"]
         }
     },
     "include": ["src/**/*"]

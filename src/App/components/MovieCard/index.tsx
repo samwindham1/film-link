@@ -11,7 +11,7 @@ const onClick = (movie: MovieResult) => {
 };
 
 export const MovieCard = ({ movie }: MovieCardProps) => (
-    <div className='movie-card'>
+    <div className='movie-card' onClick={() => onClick(movie)}>
         {movie.poster_path && <img src={getMoviePosterUrl(movie.poster_path)} className='movie-card__poster' />}
         <div className='movie-card__title'>{movie.title}</div>
     </div>

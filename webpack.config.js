@@ -43,7 +43,9 @@ const common = {
         extensions: ['.ts', '.tsx', '.js'],
         symlinks: false,
         alias: {
-            '@api': path.resolve(__dirname, 'src/api/')
+            '@api': path.resolve(__dirname, 'src/api/'),
+            '@components': path.resolve(__dirname, 'src/app/components/'),
+            '@routes': path.resolve(__dirname, 'src/app/routes/')
         }
     }
 };
