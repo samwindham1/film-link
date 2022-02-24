@@ -1,0 +1,52 @@
+.movie-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 0 0 auto;
+
+    width: 200px;
+    height: 300px;
+
+    margin: 24px;
+    border-radius: 8px;
+    background-color: #000;
+    box-shadow: 0 4px 8px 0px #aaa;
+
+    cursor: pointer;
+
+    transition: box-shadow ease 200ms;
+}
+
+.movie-card:hover {
+    box-shadow: 0 4px 8px 0px #aaa;
+}
+
+.movie-card__poster {
+    height: 100%;
+    width: auto;
+
+    transition: opacity ease 200ms;
+}
+
+.movie-card:hover .movie-card__poster {
+    opacity: 0.5;
+}
+
+.movie-card__title {
+    display: inline-block;
+    position: absolute;
+    top: 24px;
+    left: 0;
+    right: 0;
+    margin: 0 8px;
+
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+}
+
+.movie-card:hover .movie-card__title {
+    opacity: 1;
+}

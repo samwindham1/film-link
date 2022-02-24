@@ -8,7 +8,11 @@
         "allowJs": true,
         "moduleResolution": "node",
         "baseUrl": "./src",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "paths": {
+            "@api": ["api"],
+            "@api/*": ["api/*"]
+        }
     },
     "include": ["src/**/*"]
 }
