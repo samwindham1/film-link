@@ -1,0 +1,34 @@
+.movie__backdrop {
+    width: 100%;
+    height: 510px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #444;
+    filter: brightness(80%);
+    transition: background-color 1s ease;
+}
+
+.movie__backdrop__image {
+    width: 100%;
+    min-width: 906px;
+    max-width: 1400px;
+
+    height: auto;
+    min-height: 100%;
+
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 40%;
+    filter: blur(0);
+    transition: filter 1s ease;
+}
+
+.movie__backdrop__image.loading {
+    filter: blur(10px);
+}

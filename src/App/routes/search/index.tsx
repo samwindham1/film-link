@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { searchMovie } from '@api';
 import { MovieCard } from '@components';
-
 import { MovieResult } from 'moviedb-promise/dist/request-types';
+
+import './search.css';
 
 export const Search = () => {
     const [results, setResults] = useState<MovieResult[]>();
@@ -27,10 +28,7 @@ export const Search = () => {
                 </label>
                 <input type='submit' value='Submit' />
             </form>
-            <div
-                className='results'
-                style={{ padding: '8px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}
-            >
+            <div className='results'>
                 {results && results.map((result: any, index: number) => <MovieCard key={index} movie={result} />)}
             </div>
         </div>

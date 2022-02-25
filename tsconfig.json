@@ -13,6 +13,7 @@
             "@api": ["api"],
             "@api/*": ["api/*"],
             "@components": ["app/components"],
+            "@routes": ["app/routes"],
             "@routes/*": ["app/routes/*"]
         }
     },

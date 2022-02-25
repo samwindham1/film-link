@@ -14,7 +14,8 @@ const common = {
     output: {
         path: path.join(__dirname, 'public'),
         filename: '[name].js',
-        clean: true
+        clean: true,
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -61,7 +62,8 @@ const developmentConfig = {
         static: path.join(__dirname, 'public'),
         compress: true,
         port: 8080,
-        hot: true
+        hot: true,
+        historyApiFallback: true
     }
 };
 
