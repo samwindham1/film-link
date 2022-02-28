@@ -9,11 +9,12 @@ ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<App />} />
-                <Route path='/search' element={<Search />} />
-                <Route path='/search?query=:query' element={<Search />} />
-                <Route path='/movie' element={<Navigate replace to='/search' />} />
-                <Route path='/movie/:movieId' element={<Movie />} />
+                <Route path='/' element={<App />}>
+                    <Route path='search' element={<Search />} />
+                    <Route path='search?query=:query' element={<Search />} />
+                    <Route path='movie' element={<Navigate replace to='/search' />} />
+                    <Route path='movie/:movieId' element={<Movie />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

@@ -1,7 +1,9 @@
 .movie {
+    position: relative;
 }
 
 .movie__container {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
