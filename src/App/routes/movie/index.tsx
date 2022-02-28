@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovie } from '@api';
 import { MovieResponse } from 'moviedb-promise/dist/request-types';
+import { getMovie } from '@api';
 
 import { MovieInfo } from './MovieInfo';
 import { MovieBackdrop } from './MovieBackdrop';
