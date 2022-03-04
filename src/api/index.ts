@@ -16,5 +16,5 @@ const concatMovieDbUrl = (path: string) => {
     return movieDbImageUrl + path;
 };
 
-export const getMoviePosterUrl = (path: string) => concatMovieDbUrl(path);
-export const getMovieBackdropUrl = (path: string) => concatMovieDbUrl(path);
+export const getMoviePosterUrl = (path: string) => (path ? concatMovieDbUrl(path) : null);
+export const getMovieBackdropUrl = (path: string) => (path ? concatMovieDbUrl(path) : null);

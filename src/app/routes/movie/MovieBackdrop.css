@@ -11,6 +11,17 @@
     transition: background-color 1s ease;
 }
 
+.movie__backdrop__overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    transition: background-color 1s ease;
+}
+
 .movie__backdrop__image {
     width: 100%;
     min-width: 906px;
@@ -26,9 +37,10 @@
 
     opacity: 40%;
     filter: blur(0);
-    transition: filter 1s ease;
+    transition: filter opacity 1s ease;
 }
 
 .movie__backdrop__image.loading {
     filter: blur(10px);
+    opacity: 0;
 }

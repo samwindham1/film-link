@@ -24,9 +24,7 @@ export const Movie = () => {
         <div className='movie'>
             {movie ? (
                 <div className='movie__container'>
-                    {movie.backdrop_path && (
-                        <MovieBackdrop backdropPath={movie.backdrop_path} posterPath={movie.poster_path} />
-                    )}
+                    <MovieBackdrop backdropPath={movie.backdrop_path} />
                     <MovieInfo movie={movie} />
                 </div>
             ) : (
